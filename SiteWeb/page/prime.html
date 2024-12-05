@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Proposer des Primes</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <style>
+            nav {
+                display: flex;
+                width: 130px;
+                flex-direction: column;
+                justify-content: center;
+                height: 100vh;
+                background-color: black;
+            }
+
+            nav a {
+                display: block;
+                padding: 10px;
+                text-decoration: none;
+                color: white;
+                background-color: #0044cc;
+                margin-bottom: 10px;
+                font-size: 20px;
+                transition: background-color 0.3s ease;
+            }
+
+            nav a:hover {
+                background-color: #003399;
+            }
+
+            #pageAct {
+                background-color: #003399;
+            }
+
+            .divHeader {
+                background-color: #f1f1f1;
+                padding: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .pageTitle {
+                flex: 1;
+                margin: 0;
+                font-size: 24px;
+                text-align: center;
+            }
+
+            .header-right {
+                display: flex;
+                align-items: center;
+            }
+
+            .nameUsers {
+                margin-right: 10px;
+            }
+
+            .logOutIcone {
+                width: 40px;
+                height: 40px;
+            }
+
+            .formContainer {
+                margin: 20px auto;
+                width: 80%;
+                padding: 20px;
+                background-color: #fff;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                margin-left: 15%;
+            }
+
+            .inputField {
+                margin-bottom: 20px;
+            }
+
+            .inputField label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+
+            .inputField input[type="number"] {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+
+            .submitBtn {
+                background-color: #0044cc;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            .submitBtn:hover {
+                background-color: #003399;
+            }
+
+            
+            .burger-menu {
+                display: none;
+            }
+
+            .w3-show {
+                display: block;
+            }
+
+
+            @media (max-width: 600px){
+                nav {
+                    width: 64px;
+                }
+             
+                nav > a {
+                    font-size: 14px
+                }
+                /* Styles for the burger menu */
+                .burger-menu {
+                    display: inline-block;
+                    cursor: pointer;
+                    margin: 10px;
+                }
+
+                .burger-menu div {
+                    width: 35px;
+                    height: 5px;
+                    background-color: black;
+                    margin: 6px 0;
+                    transition: 0.4s;
+                }
+
+                .formContainer {
+                    margin-left: 3%;
+                }
+
+                #pageAct {
+                    color: white;
+                }
+                .burger-menu > a {
+                    color: black;
+                }
+
+            }
+
+        </style>
+    </head>
+    <body class="w3-light">
+
+        <div class="burger-menu" onclick="toggleSidebar()">
+            <a href="homeResp.html" class="w3-bar-item w3-button w3-left" style="font-size: 20px;">Home</a>
+        </div>
+
+
+        <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-hide-small" style="width:110px; position: fixed;">
+            <div style="display: flex; flex-direction: column; justify-content: center; height: 100vh;">
+                <a href="homeResp.html" class="w3-bar-item w3-button w3-left" style="font-size: 20px;">Home</a>
+            </div>
+        </nav>
+
+        <div class="w3-rest">
+
+            <div class="divHeader w3-container w3-light-grey">
+                <h1 class="pageTitle">Proposer des Primes</h1>
+                <div class="header-right">
+                    <p class="nameUsers">Responsable de département</p>
+                    <a href="#"><img src="../img/logOutIcone.jpg" class="logOutIcone" alt="image de déconnexion"></a>
+                </div>
+            </div>
+
+            <div class="formContainer w3-container">
+                <form action="prime.html" method="POST">
+                    <div class="inputField">
+                        <label for="montantPrime">Montant de la Prime (€):</label>
+                        <input type="number" id="montantPrime" name="montantPrime" min="0" required>
+                    </div>
+                    <button type="submit" class="submitBtn">Envoyer la proposition</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

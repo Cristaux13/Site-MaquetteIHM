@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Preprojet IHM</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <style>
+            nav {
+                display: flex;
+                width: 130px;
+                flex-direction: column;
+                justify-content: center;
+                height: 100vh;
+                background-color: black;
+            }
+
+            nav a {
+                display: block;
+                padding: 10px;
+                text-decoration: none;
+                color: white;
+                background-color: #0044cc;
+                margin-bottom: 10px;
+                font-size: 20px;
+                transition: background-color 0.3s ease;
+            }
+
+            nav a:hover {
+                background-color: #003399;
+            }
+
+            #pageAct {
+                background-color: #002266;
+            }
+
+            .divHeader {
+                background-color: #f1f1f1;
+                padding: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-left: 0; 
+            }
+
+            .pageTitle {
+                flex: 1;
+                margin: 0;
+                font-size: 24px;
+                text-align: center;
+            }
+
+            .header-right {
+                display: flex;
+                align-items: center;
+            }
+
+            .nameUsers {
+                margin-right: 10px;
+            }
+
+            .logOutIcone {
+                width: 40px;
+                height: 40px;
+            }
+
+            .listDepSection a div {
+                background-color: #f1f1f1;
+                border: 2px solid #ccc;
+                margin: 15px;
+                padding: 20px;
+                text-align: center;
+                transition: background-color 0.3s ease, border-color 0.3s ease;
+            }
+
+            .listDepSection a div:hover {
+                background-color: #e0e0e0;
+                border-color: #0044cc; 
+            }
+
+            .listDepSection h3 {
+                margin: 0;
+                font-size: 18px;
+                color: #333;
+            }
+
+            .burger-menu {
+            display: none;
+        }
+
+        .w3-show {
+            display: block;
+        }
+
+        @media (max-width: 600px){
+            nav {
+                width: 64px;
+            }
+             
+            nav > a {
+                font-size: 14px
+            }
+            /* Styles for the burger menu */
+            .burger-menu {
+                display: inline-block;
+                cursor: pointer;
+                margin: 10px;
+            }
+
+            .burger-menu div {
+                width: 35px;
+                height: 5px;
+                background-color: black;
+                margin: 6px 0;
+                transition: 0.4s;
+            }
+            #pageAct {
+                color: white;
+            }
+            .burger-menu > a {
+                color: black;
+            }
+        }
+
+
+        </style>
+    </head>
+    <body class="w3-light">
+
+
+        <div class="burger-menu" onclick="toggleSidebar()">
+            <a href="homeRhEnChef.html" id="pageAct" class="w3-bar-item w3-button" style="font-size: 20px;">Home</a>
+            <a href="addEmploye.html" class="w3-bar-item w3-button" style="font-size: 20px;">Ajouter employé</a>
+            <a href="addFeuille.html" class="w3-bar-item w3-button" style="font-size: 20px;">Ajouter feuilles de paye</a>
+        </div>
+
+        <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-hide-small" style="width:110px; position: fixed;">
+            <div style="display: flex; flex-direction: column; justify-content: center; height: 100vh;">
+                <a href="homeRhEnChef.html" id="pageAct" class="w3-bar-item w3-button" style="font-size: 20px;">Home</a>
+                <a href="addEmploye.html" class="w3-bar-item w3-button" style="font-size: 20px;">Ajouter employé</a>
+                <a href="addFeuille.html" class="w3-bar-item w3-button" style="font-size: 20px;">Ajouter feuilles de paye</a>
+            </div>
+        </nav>
+
+
+        <div class="w3-rest">
+            
+            <!-- En-tête de la page -->
+            <div class="divHeader w3-container w3-light-grey">
+                <h1 class="pageTitle">Liste des départements</h1>
+                <div class="header-right">
+                    <p class="nameUsers">RH en chef</p>
+                    <a href="#"><img src="../img/logOutIcone.jpg" class="logOutIcone" alt="image de déconnexion"></a>
+                </div>
+            </div>
+
+            <section class="listDepSection w3-container" style="margin-left: 7%;">
+                <div class="w3-row-padding">
+                    <div class="w3-col s12 m6 l4">
+                        <a href="listEmploye.html">
+                            <div class="w3-card">
+                                <h3>Comptabilité et Finances</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="w3-col s12 m6 l4">
+                        <a href="listEmploye.html">
+                            <div class="w3-card">
+                                <h3>Recherche et Développement</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="w3-col s12 m6 l4">
+                        <a href="listEmploye.html">
+                            <div class="w3-card">
+                                <h3>Ressources humaines</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="w3-col s12 m6 l4">
+                        <a href="listEmploye.html">
+                            <div class="w3-card">
+                                <h3>Production</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="w3-col s12 m6 l4">
+                        <a href="listEmploye.html">
+                            <div class="w3-card">
+                                <h3>Marketing et Vente</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="w3-col s12 m6 l4">
+                        <a href="listEmploye.html">
+                            <div class="w3-card">
+                                <h3>Logistique</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="w3-col s12 m6 l4">
+                        <a href="listEmploye.html">
+                            <div class="w3-card">
+                                <h3>Informatique</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </body>
+</html>
